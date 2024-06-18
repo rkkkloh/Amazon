@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9c</title>
+  </head>
+  <body>
+    <button class="js-heads-button" onclick="
+      displayChoice('heads');
+    ">heads</button>
+    <button class="js-tails-button" onclick="
+      displayChoice('tails');
+    ">tails</button>
+    <p class="js-display-choice"></p>
+
+    <script>
+      function displayChoice(choice) {
+        document.querySelector('.js-display-choice')
+            .innerHTML = `You chose:${choice}`;
+      }
+    </script>
+  </body>
+</html>

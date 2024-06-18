@@ -50,13 +50,12 @@
       function subscribe() {
         const buttonElement = document.querySelector('.js-subscribe-button');
 
-        if (buttonElement.innerText === 'Subscribe') {
-          buttonElement.innerHTML = 'Subscribed';
-        } else {
+        if (buttonElement.innerText !== 'Subscribe') {
           buttonElement.innerHTML = 'Subscribe';
+        } else {
+          buttonElement.innerHTML = 'Subscribed';
         }
       }
-      
     </script>
   </body>
 </html>
