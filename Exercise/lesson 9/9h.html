@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9h</title>
+  </head>
+  <body>
+    <input class="js-input" placeholder="Type something" onkeyup="
+      handleKeyDownEvent(event);
+    ">
+    <p class="js-display-text"></p>
+
+    <script>
+      function handleKeyDownEvent(event) {
+        document.querySelector('.js-display-text')
+          .innerHTML = document.querySelector('.js-input').value;
+      }
+    </script>
+  </body>
+</html>
