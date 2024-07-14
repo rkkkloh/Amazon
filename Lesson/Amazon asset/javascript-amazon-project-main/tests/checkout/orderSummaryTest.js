@@ -18,6 +18,7 @@ describe('test suite: renderOrderSummary', () => {
     document.querySelector('.js-test-container').innerHTML = `
       <div class="js-order-summary"></div>
       <div class="js-payment-summary"></div>
+      <div class="js-return-to-home-link"><div>
     `;
 
     spyOn(localStorage, 'getItem').and.callFake(() => {

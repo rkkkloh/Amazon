@@ -1,4 +1,4 @@
-import {cart, removeFromCart, updateDeliveryOption} from '../../data/cart.js';
+import {cart, removeFromCart, calculateCartQuantity, updateDeliveryOption} from '../../data/cart.js';
 import {products, getProduct} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -128,6 +128,8 @@ export function renderOrderSummary() {
         );
         container.remove();
 
+        updateCartQuantity();
+
         renderPaymentSummary();
       });
     });
@@ -141,4 +143,13 @@ export function renderOrderSummary() {
         renderPaymentSummary();
       });
     });
+
+  updateCartQuantity();
+}
+
+function updateCartQuantity() {
+  const cartQuantity = calculateCartQuantity();
+
+  document.querySelector('.js-return-to-home-link')
+    .innerHTML = `${cartQuantity} items`;
 }
