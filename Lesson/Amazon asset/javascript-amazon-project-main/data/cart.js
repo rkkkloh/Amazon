@@ -18,7 +18,7 @@ export function loadFromStorage() {
   }
 }
 
-function saveToStorage() {
+export function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -36,6 +36,8 @@ export function addToCart(productId) {
   const quantitySelector = document.querySelector(
     `.js-quantity-selector-${productId}`
   );
+
+  console.log(quantitySelector);
 
   const quantity = Number(quantitySelector.value);
 
