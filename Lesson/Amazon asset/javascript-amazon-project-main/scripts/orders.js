@@ -3,9 +3,13 @@ import {orders} from '../data/orders.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {formatCurrency} from './utils/money.js';
 import {cart, saveToStorage} from '../data/cart.js';
+import {calculateCartQuantity} from '../data/cart.js';
+
 
 async function loadPage() {
   await loadProductsFetch();
+
+  renderCartQuantity();
 
   let ordersHTML = '';
 
@@ -126,6 +130,13 @@ export function addToCart(productId) {
   }
 
   saveToStorage();
+}
+
+function renderCartQuantity() {
+  const cartQuantity = calculateCartQuantity();
+
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
 }
 
 loadPage();
