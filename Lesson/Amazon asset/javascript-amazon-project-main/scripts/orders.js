@@ -105,6 +105,8 @@ async function loadPage() {
         }, 1000);
 
         addedMessageTimeouts[button.dataset.productId] = timeoutId;
+
+        renderCartQuantity();
       });
     });
   });
